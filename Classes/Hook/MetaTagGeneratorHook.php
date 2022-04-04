@@ -52,9 +52,10 @@ class MetaTagGeneratorHook
     {
         $metaData = GeneralUtility::makeInstance(MetaDataService::class)->getMetaData();
 
-        if (!$metaData) {
-            return;
-        }
+        # following if statement prevents getting the fallback SM images
+        //if (!$metaData) {
+        //    return;
+        //}
 
         // render content
         $this->renderContent($metaData);
